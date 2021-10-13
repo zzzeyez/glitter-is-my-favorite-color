@@ -59,6 +59,20 @@ function mouseClicked() {
   }
 }
 
+function touchStarted() {
+  if (paused < 1) {
+    noLoop();
+    stop();
+    paused = 1;
+  } else {
+    paused = 0;
+    black = mouseX / 100000;
+    glitter = mouseY / 100000;
+    background(20, 20, 20);
+    loop();
+  }
+}
+
 function windowResized() {
   background(20, 20, 20);
   resizeCanvas(windowHeight, windowWidth);

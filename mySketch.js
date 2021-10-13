@@ -3,8 +3,8 @@
 //let black = 0.003;
 //let glitter
 //let black
-var black = 0.004;
-var glitter = 0.002;
+var black = random(0.001, 0.006);
+var glitter = random(0.001, 0.006);
 let paused = 0;
 
 //function preload() {

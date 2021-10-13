@@ -28,12 +28,12 @@ function draw() {
   rect(0, 0, width, height * 2);
   var x = 0;
   for (var i = -10; i < width + 100; i += 0.5) {
-    stroke(random(50, 255), random(50, 255), random(50, 255), 80);
+    stroke(random(0, 255), random(0, 255), random(0, 255), 50);
     //fill(random(220, 255), random(220, 255), random(220, 255), 120);
-    fill(255, 255, 255, 200);
+    fill(255, 255, 255, 150);
     ellipse(i * 2, noise(i * glitter, frameCount * 0.002 * 2) * height, 2, 2); // glitter
     stroke(0, 0, 0, 130);
-    fill(255, 255, 255, 150);
+    fill(255, 255, 255, 120);
     ellipse(i * 2, noise(i * black, frameCount * 0.002 * 2) * height, 2, 2); // blk
   }
 }
@@ -59,8 +59,10 @@ function touchStarted() {
     paused = 1;
   } else {
     paused = 0;
-    black = mouseX / 100000;
-    glitter = mouseY / 100000;
+    //black = mouseX / 100000;
+    //glitter = mouseY / 100000;
+		black = mouseX / width / 90;
+		glitter = mouseY / height / 90;
     background(10, 10, 10);
     loop();
   }

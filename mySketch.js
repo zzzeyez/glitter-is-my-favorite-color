@@ -1,27 +1,20 @@
-//let myShader;
 //let glitter = 0.009;
 //let black = 0.003;
 //let glitter
 //let black
-var black = random(0.001, 0.006);
-var glitter = random(0.001, 0.006);
 let paused = 0;
-
-//function preload() {
-// a shader is composed of two parts, a vertex shader, and a fragment shader
-// the vertex shader prepares the vertices and geometry to be drawn
-// the fragment shader renders the actual pixel colors
-// loadShader() is asynchronous so it needs to be in preload
-// loadShader() first takes the filename of a vertex shader, and then a frag shader
-// these file types are usually .vert and .frag, but you can actually use anything. .glsl is another common one
-//myShader = loadShader("shader.vert", "shader.frag");
-//}
+var black = 0.004;
+var glitter = 0.002;
+//var black = random(0.001, 0.006);
+//var glitter = random(0.001, 0.006);
 
 function setup() {
   frameRate(60);
   createCanvas(windowWidth, windowHeight);
   background(10, 10, 10);
   smooth();
+  //var black = random(0.001, 0.006);
+  //var glitter = random(0.001, 0.006);
 }
 
 function draw() {
@@ -45,19 +38,19 @@ function draw() {
   }
 }
 
-function mouseClicked() {
-  if (paused < 1) {
-    noLoop();
-    stop();
-    paused = 1;
-  } else {
-    paused = 0;
-    black = mouseX / 100000;
-    glitter = mouseY / 100000;
-    background(20, 20, 20);
-    loop();
-  }
-}
+//function mouseClicked() {
+//if (paused < 1) {
+//noLoop();
+//stop();
+//paused = 1;
+//} else {
+//paused = 0;
+//black = mouseX / 100000;
+//glitter = mouseY / 100000;
+//background(10, 10, 10);
+//loop();
+//}
+//}
 
 function touchStarted() {
   if (paused < 1) {
@@ -68,7 +61,7 @@ function touchStarted() {
     paused = 0;
     black = mouseX / 100000;
     glitter = mouseY / 100000;
-    background(20, 20, 20);
+    background(10, 10, 10);
     loop();
   }
 }
